@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-register',
-  template: `<body>
+  template: `<body class="bo">
  
   <div class="row">
     <div class="main">
