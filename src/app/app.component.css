@@ -117,18 +117,8 @@ ul {
     width: 140px;
 } 
 
-/*body {
-    background-image: url("/assets/Vistara_Banner_Desktop.jpg");
-    background-repeat: no-repeat;
-    
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
-   }
-   */
    .bo{
+     
     background-image: url("/assets/Vistara_Banner_Desktop.jpg");
     background-repeat: no-repeat;
     
@@ -136,6 +126,7 @@ ul {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    position: relative;
    }
    
   
@@ -150,7 +141,7 @@ ul {
     width: 80%;
     margin: auto;
   }
-  /* Add a card effect for articles */
+ 
   .card {
     /* background-color: white; */
     
