@@ -19,6 +19,7 @@ import { LoginComponent } from "./Login.Component";
     DiscoverComponent,
     RegisterComponent,
     LoginComponent
+    //BookingComponent
   ],
   imports: [
     BrowserModule,

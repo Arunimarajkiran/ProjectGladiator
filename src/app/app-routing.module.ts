@@ -6,6 +6,7 @@ import { PlanComponent } from "./Plan.Component";
 import { ClassesComponent } from "./Classes.Component";
 import { DiscoverComponent } from "./Discover.Component";
 import { LoginComponent } from "./Login.Component";
+//import { BookingComponent } from "./Booking.component";
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
   {
     path:'loginlink',component:LoginComponent
   }
+  
 ];
 
 @NgModule({
