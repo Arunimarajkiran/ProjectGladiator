@@ -10,6 +10,7 @@
     <ul>
       <li><a class="temp" routerLink="/homelink"><img src="./assets/air2.jpg" style="width:55px;height:55px;"></a></li>
       <li class="diff"><b>AirFuselage</b></li><br/>
+      <li><a routerLink="/homelink">Home |</a></li>
       <li class="dropdown"><a routerLink="/planlink" class="dropbtn">Plan&Book |</a>
         <div class="dropdown-content">
           <a routerLink="/homelink">Book a flight</a>
@@ -31,24 +32,24 @@
     <div class="footer-content">
 
       <div class="footer-section about">
-        <h1 class="logo-text"><span>Air</span>Fuselage</h1>
+        <h2 class="logo-text"><span>Air</span>Fuselage</h2>
         <p>About the airline</p>
         <div class="contact">
             <span><i class="fas fa-phone"></i>&nbsp; 123-456-789</span>
             <span><i class="fas fa-envelope"></i>&nbsp; airfuselage@gmail.com</span>
         </div>
         <div class="socials">
-          <a href="#" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-instagram"></a>
-          <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="social"><img src="./assets/facebook.jpg" style="width: 600px;height:55px;"></a>
+          <a href="#" class="social"><img src="./assets/instagram.jpg" style="width: 600px;height:55px;"></a>
+          <a href="#" class="social"><img src="./assets/twitter.png" style="width: 600px;height:55px;"></a>
+          <a href="#" class="social"><img src="./assets/youtube.png" style="width: 1000px;height:55px;"></a>
 
         </div>
       </div>
       <div class="footer-section links">
         <h2>Quick Links</h2>
         <br>
-        <ul class="a" >
+        <ul class="newul">
           <li><a href="#">ABOUT US</a></li>
           <li><a href="#">MILES&SMILES</a></li>
           <li><a href="#">TERMS & CONDITIONS</a></li>
@@ -60,9 +61,9 @@
       <br>
       <form>
         <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-        <textarea name="message" class="text-input contact-input" placeholder="Your message here..."></textarea>
-        <button type="submit" class="btn btn-big">
-          <i class="fas fa-envelope"></i>
+        <textarea name="message" class="text-input contact-input" placeholder="Your message here..."></textarea><br>
+        <button type="submit" class="btn btn-big contact-btn" >
+           <img src="./assets/email.png">&nbsp;&nbsp;
           send
         </button>
       </form>
