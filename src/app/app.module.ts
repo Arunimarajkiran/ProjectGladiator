@@ -9,6 +9,7 @@ import { ClassesComponent } from "./Classes.Component";
 import { DiscoverComponent } from "./Discover.Component";
 import { RegisterComponent } from "./Register.Component";
 import { LoginComponent } from "./Login.Component";
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from "./Login.Component";
     ClassesComponent,
     DiscoverComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    PaymentComponent
     //BookingComponent
   ],
   imports: [

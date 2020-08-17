@@ -18,15 +18,15 @@ import { Component } from '@angular/core';
               <label for="uname"><b>First Name</b></label>
               <input type="text" placeholder="Enter First Name" name="uname" required ngModel>
 
-              <label for="uname"><b>Last Name</b></label>
-              <input type="text" placeholder="Enter Last Name" name="uname" required ngModel>
+              <label for="lname"><b>Last Name</b></label>
+              <input type="text" placeholder="Enter Last Name" name="lname" required ngModel>
 
               <label for="email"><b>Email Address</b></label>
               <input type="email" placeholder="Enter Email Address" name="email" pattern=".+@gmail.com" required ngModel>
           
               <label for="psw"><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*?[$,@,!]).{8,}$"
-              
+              title="Must contain at least one special character,one number,one uppercase and lowercase letter, and at least 8 or more characters"
                required ngModel>
 
               <label for="psw"><b>Confirm Password</b></label>
@@ -39,6 +39,7 @@ import { Component } from '@angular/core';
           
               <label for="mobile"><b>Mobile No.</b></label>
               <input type="tel" placeholder="Enter Mobile Number" pattern="[0-9]*" name="mobile" minlength="10" maxlength="10" 
+              title="Must contain exactly 10 digits"
               required ngModel>
               
   
