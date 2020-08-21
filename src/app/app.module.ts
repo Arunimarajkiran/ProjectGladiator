@@ -10,6 +10,8 @@ import { DiscoverComponent } from "./Discover.Component";
 import { RegisterComponent } from "./Register.Component";
 import { LoginComponent } from "./Login.Component";
 import { PaymentComponent } from './payment/payment.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { PaymentComponent } from './payment/payment.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

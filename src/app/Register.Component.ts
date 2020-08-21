@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import { User } from "./User";
+import { NgForm } from "@angular/forms";
+import { ServiceService } from "src/app/service.service";
 
 @Component({
   selector: 'app-register',
@@ -11,36 +13,34 @@ import { Component } from '@angular/core';
           
         <h2 style="text-align: center;"> Hello Where do you want to explore?</h2>
         
-         <form > 
+         <form #registerForm='ngForm' (ngSubmit)='registerAUser(registerForm)' > 
           <table align="center">
           
             <div class="containera">
               <label for="uname"><b>First Name</b></label>
-              <input type="text" placeholder="Enter First Name" name="uname" required ngModel>
+              <input type="text" placeholder="Enter First Name" name="uname" [(ngModel)]='user.firstName' required >
 
               <label for="lname"><b>Last Name</b></label>
-              <input type="text" placeholder="Enter Last Name" name="lname" required ngModel>
+              <input type="text" placeholder="Enter Last Name" name="lname" [(ngModel)]='user.lastName' required >
 
               <label for="email"><b>Email Address</b></label>
-              <input type="email" placeholder="Enter Email Address" name="email" pattern=".+@gmail.com" required ngModel>
+              <input type="email" placeholder="Enter Email Address" name="email" pattern=".+@lti" [(ngModel)]='user.email' required>
           
               <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*?[$,@,!]).{8,}$"
-              title="Must contain at least one special character,one number,one uppercase and lowercase letter, and at least 8 or more characters"
-               required ngModel>
+              <input type="password" placeholder="Enter Password" name="pass" 
+              [(ngModel)]='user.password' required >
 
               <label for="psw"><b>Confirm Password</b></label>
-              <input type="password" placeholder="Enter Password again" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*?[$,@,!]).{8,}$"
-              
-               required ngModel>
+              <input type="password" placeholder="Enter Password again" name="pass" 
+              [(ngModel)]='user.confirmPassword' required >
               
               <label for="date"><b>Date of Birth</b></label> <br>
-              <input type="date" name="date" required ngModel><br><br>
+              <input type="date" name="date" [(ngModel)]='user.dateOfBirth' required ><br><br>
           
               <label for="mobile"><b>Mobile No.</b></label>
               <input type="tel" placeholder="Enter Mobile Number" pattern="[0-9]*" name="mobile" minlength="10" maxlength="10" 
-              title="Must contain exactly 10 digits"
-              required ngModel>
+              title="Must contain exactly 10 digits" [(ngModel)]='user.mobileNumber'
+              required >
               
   
               <button type="submit">Register</button>
@@ -60,6 +60,19 @@ styleUrls: [`./app.component.css`]
 })
 export class RegisterComponent {
     title = 'testing';
+    status;
+
+    user=new User;
+    constructor(private service :ServiceService) { }
+
+    registerAUser(form :NgForm){
+      alert(JSON.stringify(this.user));
+    this.service.registerAUser(this.user).subscribe(
+      data=>{
+        this.status=data;
+      }
+    )
+    }
 
     
   }
