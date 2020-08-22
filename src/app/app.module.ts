@@ -12,6 +12,7 @@ import { LoginComponent } from "./Login.Component";
 import { PaymentComponent } from './payment/payment.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SeatsComponent } from './seats/seats.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     DiscoverComponent,
     RegisterComponent,
     LoginComponent,
-    PaymentComponent
+    PaymentComponent,
+    SeatsComponent
     //BookingComponent
   ],
   imports: [

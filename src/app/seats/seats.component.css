@@ -1,0 +1,82 @@
+*,*:before,*:after {
+    box-sizing: border-box;
+  }
+  body {
+    background-image: url("/src/assets/seats.jpg");
+   }
+  html {
+    font-size: 16px;
+  }
+   .fuselage {
+    background-image: url("/src/assets/seats.jpg");
+    background-color: cadetblue;
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-right: 5px solid #d8d8d8;
+    border-left: 5px solid #d8d8d8;
+  }
+  
+  .plane {
+    margin: 20px auto;
+    max-width: 300px;
+  }
+  
+  .cockpit {
+    height: 250px; 
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 5px solid #d8d8d8;
+  }
+  
+  .exit {
+    position: relative;
+    height: 50px;
+  }
+  
+  ol {
+    list-style :none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .row {
+    aspect-ratio: inherit;
+  }
+  
+  .seats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;  
+  }
+  
+  .seat {
+    display: flex;
+    flex: 0 0 14.28571428571429%;
+    padding: 5px;
+    position: relative;      
+    }
+    .exit {
+      position: relative;
+      height: 50px;
+      }
+    
+    label {    
+      display: block;
+      position: relative;    
+      width: 100%;    
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 1.5rem;
+      padding: 4px 0;
+      background: #F42536;
+      border-radius: 5px;
+      animation-duration: 300ms;
+      animation-fill-mode: both;
+  }
+  
