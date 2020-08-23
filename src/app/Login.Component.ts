@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Login } from "./Login";
+import { ServiceService } from "./service.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,15 +22,14 @@ import { Component } from '@angular/core';
                         </div>
                     </div>
                     <div class="form-bottom" style="color:white;">
-                        <form id="loginForm" method="post" action="LoginServlet">
+                        <form (ngSubmit)="loginCustomer()" method="POST">
                             <div class="containerb">
                                 <label for="uname"><b>Username</b></label>
-                                <input type="text" title="username should be more than 5 characters"
-                                    placeholder="Enter Username" id="uname" name="uname" />
+                                <input type="text" placeholder="Enter Username" name="uname" [(ngModel)] = login.email  />
                                 <span id="userSpan" style="color: red;"></span><br />
 
                                 <label for="psw"><b>Password</b></label>
-                                <input type="password" placeholder="Enter Password" name="psw" id="psw" />
+                                <input type="text" placeholder="Enter Password" name="psw" [(ngModel)] = login.password />
                                 <span id="pswSpan" style="color: red;"></span><br />
                                 <button class="buttonb" type="submit">Login</button>
                                 <label>
@@ -41,6 +43,9 @@ import { Component } from '@angular/core';
                                 <span class="psw"> <a href="#">Forgot password?</a></span>
                             </div>
                         </form>
+                        <h2>{{ message }}</h2>
+                        <h2>{{ userId }}</h2>
+                        <h2>{{ userName }}</h2>
                     </div>
                 </div>
             </div>
@@ -53,4 +58,27 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
     title = 'testing';
-  }
+
+    login : Login=new Login();
+    message : String;
+
+    constructor(private service: ServiceService, private router: Router) {}
+
+    loginCustomer() {
+        this.service.loginCustomer(this.login).subscribe(data=>{
+            alert(JSON.stringify(data));
+            if(data.status=='SUCCESS') {
+                let userId=data.userId;
+                let userName=data.name
+
+                sessionStorage.setItem('userId',userId);
+                sessionStorage.setItem('userName',userName);
+                this.router.navigate(['homelink']);
+            }
+            else {
+                this.message=data.message;
+            }
+        })
+    }
+
+}
