@@ -69,9 +69,9 @@ export class LoginComponent {
             alert(JSON.stringify(data));
             if(data.status=='SUCCESS') {
                 let userId=data.userId;
-                let userName=data.name
+                let userName=data.name;
 
-                sessionStorage.setItem('userId',userId);
+                sessionStorage.setItem('userId',String(userId));
                 sessionStorage.setItem('userName',userName);
                 this.router.navigate(['homelink']);
             }
