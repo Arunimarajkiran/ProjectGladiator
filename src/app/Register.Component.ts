@@ -52,6 +52,7 @@ import { ServiceService } from "src/app/service.service";
     </div>
     </div>
    </div>
+   <h1>{{status?.message}}</h1>
   
    </body>
 
@@ -60,7 +61,7 @@ styleUrls: [`./app.component.css`]
 })
 export class RegisterComponent {
     title = 'testing';
-    status;
+    status ;
 
     user=new User;
     constructor(private service :ServiceService) { }
@@ -69,7 +70,9 @@ export class RegisterComponent {
       alert(JSON.stringify(this.user));
     this.service.registerAUser(this.user).subscribe(
       data=>{
+        alert(JSON.stringify(data));
         this.status=data;
+        //thjjvj h h hjb.n
       }
     )
     }
