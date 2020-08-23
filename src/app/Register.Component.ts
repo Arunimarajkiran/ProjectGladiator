@@ -24,10 +24,10 @@ import { ServiceService } from "src/app/service.service";
               <input type="text" placeholder="Enter Last Name" name="lname" [(ngModel)]='user.lastName' required >
 
               <label for="email"><b>Email Address</b></label>
-              <input type="email" placeholder="Enter Email Address" name="email" pattern=".+@lntinfotech.com" [(ngModel)]='user.email' required>
+              <input type="email" placeholder="Enter Email Address" name="email" pattern=".+@gmail.com" [(ngModel)]='user.email' required>
           
               <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="pass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$"
+              <input type="password" placeholder="Enter Password" name="pass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}"
               title="Must contain at least one special character,one number,one uppercase and lowercase letter, and at least 8 or more characters"
               [(ngModel)]='user.password' required >
 
@@ -67,7 +67,13 @@ export class RegisterComponent {
     user=new User;
     constructor(private service :ServiceService) { }
 
+    sendEmail(){
+      this.service.sendEmail(this.user).subscribe
+      (data => console.log(data));
+    }
+
     registerAUser(form :NgForm){
+      this.sendEmail();
       alert(JSON.stringify(this.user));
     this.service.registerAUser(this.user).subscribe(
       data=>{

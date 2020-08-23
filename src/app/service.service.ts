@@ -18,8 +18,13 @@ export class ServiceService {
   }
 
   loginCustomer(login: Login):Observable<LoginStatus>{
-    var url="http://localhost:8080/login";
+    var url="http://localhost:9090/login";
     return this.http.post<LoginStatus>(url,login);
+
+  }
+  sendEmail(user:User){
+    var url="http://localhost:9090/hello";
+    return this.http.post(url,user);
 
   }
 }

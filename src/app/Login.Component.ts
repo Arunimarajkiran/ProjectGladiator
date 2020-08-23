@@ -43,9 +43,9 @@ import { Router } from '@angular/router';
                                 <span class="psw"> <a href="#">Forgot password?</a></span>
                             </div>
                         </form>
-                        <h2>{{ message }}</h2>
-                        <h2>{{ userId }}</h2>
-                        <h2>{{ userName }}</h2>
+                        <h2>{{ status?.message }}</h2>
+                        <h2>{{ status?.userId }}</h2>
+                        <h2>{{ status?.userNname }}</h2>
                     </div>
                 </div>
             </div>
@@ -61,6 +61,7 @@ export class LoginComponent {
 
     login : Login=new Login();
     message : String;
+    status ;
 
     constructor(private service: ServiceService, private router: Router) {}
 
