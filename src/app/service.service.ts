@@ -13,7 +13,7 @@ export class ServiceService {
   constructor(private http: HttpClient) { }
 
   registerAUser(user: User){
-    var url="http://localhost:8080/register";
+    var url="http://localhost:9090/register";
     return this.http.post(url,user);
   }
 
