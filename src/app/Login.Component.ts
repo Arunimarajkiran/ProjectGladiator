@@ -45,7 +45,7 @@ import { Router } from '@angular/router';
                         </form>
                         <h2>{{ status?.message }}</h2>
                         <h2>{{ status?.userId }}</h2>
-                        <h2>{{ status?.userNname }}</h2>
+                        <h2>{{ status?.userName }}</h2>
                     </div>
                 </div>
             </div>

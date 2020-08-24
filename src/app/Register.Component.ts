@@ -11,7 +11,7 @@ import { ServiceService } from "src/app/service.service";
     <div class="main">
       <div class="card">
           
-        <h2 style="text-align: center;"> Hello Where do you want to explore?</h2>
+        <h2 style="text-align: center;"> Hello, Where do you want to explore?</h2>
         
          <form #registerForm='ngForm' (ngSubmit)='registerAUser(registerForm)' > 
           <table align="center">
@@ -27,16 +27,13 @@ import { ServiceService } from "src/app/service.service";
               <input type="email" placeholder="Enter Email Address" name="email" pattern=".+@gmail.com" [(ngModel)]='user.email' required>
           
               <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="pass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}"
-              title="Must contain at least one special character,one number,one uppercase and lowercase letter, and at least 8 or more characters"
-              [(ngModel)]='user.password' required >
+              <input type="password" placeholder="Enter Password" name="psw"  minlength="8"
+              [(ngModel)]='user.password' required  >
 
-              <label for="psw"><b>Confirm Password</b></label>
-              <input type="password" placeholder="Enter Password again" name="pass" 
-              [(ngModel)]='user.confirmPassword' required >
+              
               
               <label for="date"><b>Date of Birth</b></label> <br>
-              <input type="date" name="date" [(ngModel)]='user.dateOfBirth' required ><br><br>
+              <input type="date" name="date" [(ngModel)]='user.dateOfBirth' min="1980-01-01" max="2002-12-31" required ><br><br>
           
               <label for="mobile"><b>Mobile No.</b></label>
               <input type="tel" placeholder="Enter Mobile Number" pattern="[0-9]*" name="mobile" minlength="10" maxlength="10" 
@@ -44,8 +41,8 @@ import { ServiceService } from "src/app/service.service";
               required >
               
   
-              <button type="submit">Register</button>
-              <button type="button" class="cancelbtn">Cancel</button>
+              <button [disabled]='registerForm.invalid' type="submit">Register</button>
+              <button type="button" class="cancelbtn" type="reset">Cancel</button>
             </div>
           </table>
           </form>
@@ -82,6 +79,7 @@ export class RegisterComponent {
         
       }
     )
+    form.reset();
     }
 
     
