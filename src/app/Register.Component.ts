@@ -82,5 +82,5 @@ export class RegisterComponent {
     form.reset();
     }
 
-    
+    //ghhjjj
   }
